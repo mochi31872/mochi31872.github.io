@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>내 IP 주소 확인<title>
+  <title>내 IP 주소 확인</title>
   <style>
     body {
       font-family: Arial, sans-serif;
