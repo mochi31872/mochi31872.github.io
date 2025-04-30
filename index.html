@@ -16,22 +16,34 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+    .header {
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .title-box, .univ-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     h1 {
       font-size: 48px;
       color: #333;
-      margin-bottom: 30px;
+      margin: 0 0 16px 0;
     }
 
     .link {
       font-size: 18px;
-      padding: 12px 24px;
-      margin: 8px 0; /* 요게 간격입니다! */
+      padding: 10px 20px;
+      margin: 6px 0;
       color: white;
       background-color: #007acc;
       text-decoration: none;
       border-radius: 8px;
       transition: background-color 0.3s ease;
-      display: inline-block;
     }
 
     .link:hover {
@@ -40,18 +52,20 @@
   </style>
 </head>
 <body>
-  <div class="title-row">
-  <h1>대학</h1>
-  <h1>자주 사용</h1>
+
+  <div class="header">
+    <div class="title-box">
+      <h1>mochi</h1>
+      <a class="link" href="ipcheck.html">아이피 확인</a>
+    </div>
+
+    <div class="univ-box">
+      <h1>동서대학교</h1>
+      <a class="link" href="https://eclass1.dongseo.ac.kr/">eClass</a>
+      <a class="link" href="https://www.dongseo.ac.kr/kr/?pCode=main">홈페이지</a>
+      <a class="link" href="https://sugang.dongseo.ac.kr/">수강신청</a>
+    </div>
   </div>
 
-  <a class="link" href="https://eclass1.dongseo.ac.kr/">동서대 eClass</a>
-  <a class="link" href="https://www.dongseo.ac.kr/kr/?pCode=main">동서대 홈페이지</a>
-  <a class="link" href="https://sugang.dongseo.ac.kr/">수강신청</a>
-  <a class="link" href="ipcheck.html">아이피 확인</a>
-  <a class="link" href="https://anilife.live/">애니</a>
-  <a class="link" href="https://www.thecall.co.kr/bbs/board.php?bo_table=phone">더콜(전화번호 확인)</a>
-  <a class="link" href="ipcheck.html">아이피 확인</a>
-  
 </body>
 </html>
