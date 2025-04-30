@@ -12,7 +12,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #e0f7fa, #fff3e0);
+      background: linear-gradient(135deg, #f0f8ff, #ffe0b2);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
@@ -20,29 +20,32 @@
       font-size: 48px;
       color: #333;
       margin-bottom: 30px;
-      letter-spacing: 1px;
     }
 
-    a {
-      font-size: 20px;
+    .link {
+      font-size: 18px;
       padding: 12px 24px;
+      margin: 8px 0; /* 요게 간격입니다! */
       color: white;
       background-color: #007acc;
       text-decoration: none;
       border-radius: 8px;
       transition: background-color 0.3s ease;
+      display: inline-block;
     }
 
-    a:hover {
+    .link:hover {
       background-color: #005fa3;
     }
   </style>
 </head>
 <body>
   <h1>mochi</h1>
-  <a href="ipcheck.html">아이피 확인</a>
-  <a href="https://eclass1.dongseo.ac.kr/">동서대 eclass</a>
-  <a href="https://www.dongseo.ac.kr/kr/?pCode=main">동서대 홈페이지</a>
-  <a href="https://sugang.dongseo.ac.kr/">수강신청</a>
+
+  <a class="link" href="ipcheck.html">아이피 확인</a>
+  <a class="link" href="https://eclass1.dongseo.ac.kr/">동서대 eClass</a>
+  <a class="link" href="https://www.dongseo.ac.kr/kr/?pCode=main">동서대 홈페이지</a>
+  <a class="link" href="https://sugang.dongseo.ac.kr/">수강신청</a>
+
 </body>
 </html>
