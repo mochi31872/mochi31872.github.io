@@ -1,1 +1,33 @@
--[아이피 확인](https://mochi31872.github.io/ipcheck.html)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>mochi31872</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    h1 {
+      color: #007bff;
+    }
+    a {
+      margin-top: 10px;
+      color: #555;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>mochi</h1>
+  <a href="ip_check/ipcheck.html">- 아이피 확인</a>
+</body>
+</html>
