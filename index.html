@@ -54,11 +54,30 @@
   </style>
 </head>
 <body>
-  <button onclick="document.getElementById('bgm').play()">🎵 배경음악 재생</button>
-  <audio autoplay loop hidden>
+  <button id="toggleBgm">🎵 배경음악 재생</button>
+
+<audio id="bgm" loop>
   <source src="healing.mp3" type="audio/mpeg">
   브라우저가 오디오를 지원하지 않습니다.
-  </audio>
+</audio>
+
+<script>
+  const audio = document.getElementById('bgm');
+  const button = document.getElementById('toggleBgm');
+
+  let isPlaying = false;
+
+  button.addEventListener('click', () => {
+    if (isPlaying) {
+      audio.pause();
+      button.textContent = '🎵 배경음악 재생';
+    } else {
+      audio.play();
+      button.textContent = '⏸️ 배경음악 정지';
+    }
+    isPlaying = !isPlaying;
+  });
+</script>
   
   <div class="header">
     <div class="title-box">
