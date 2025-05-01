@@ -72,11 +72,18 @@
     background-color: #218838;
     transform: scale(1.05);
   }
+   #volumeControl {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    z-index: 9999;
+  }
   </style>
 </head>
 <body>
 <button id="toggleBgm">🎵 배경음악 재생</button>
-
+<input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
 <audio id="bgm" loop>
   <source src="healing.mp3" type="audio/mpeg">
   브라우저가 오디오를 지원하지 않습니다.
@@ -85,8 +92,11 @@
 <script>
   const audio = document.getElementById('bgm');
   const button = document.getElementById('toggleBgm');
+  const volumeSlider = document.getElementById('volumeControl');
 
   let isPlaying = false;
+
+  audio.volume = volumeSlider.value;
 
   button.addEventListener('click', () => {
     if (isPlaying) {
@@ -98,14 +108,19 @@
     }
     isPlaying = !isPlaying;
   });
+
+  volumeSlider.addEventListener('input', () => {
+    audio.volume = volumeSlider.value;
+  });
 </script>
   
   <div class="header">
     <div class="title-box">
       <h1>자주 사용</h1>
       <a class="link" href="https://www.youtube.com/">유튜브</a>
-      <a class="link" href="https://www.y2mate.com/kr868/youtube-mp3">mp3 전환</a>
+      <a class="link" href="https://chatgpt.com/">챗gpt</a>
       <a class="link" href="https://github.com/">github</a>
+      <a class="link" href="https://www.y2mate.com/kr868/youtube-mp3">mp3 전환</a>
       <a class="link" href="ipcheck.html">아이피 확인</a>
       <a class="link" href="https://anilife.live/">애니</a>
       <a class="link" href="https://www.thecall.co.kr/bbs/board.php?bo_table=phone">더콜</a>
