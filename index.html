@@ -51,29 +51,36 @@
     .link:hover {
       background-color: #005fa3;
     }
+
+     #muteToggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      background-color: #007acc;
+      color: white;
+      cursor: pointer;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 9999;
+    }
+
+    #muteToggle:hover {
+      background-color: #005fa3;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
- <button id="muteToggle">🔇 음소거</button>
+<button id="muteToggle">🔊 소리 켜기</button>
 
-<audio id="bgm" autoplay loop>
-  <source src="healing.mp3" type="audio/mpeg">
-  브라우저가 오디오를 지원하지 않습니다.
-</audio>
-
-<script>
-  const audio = document.getElementById('bgm');
-  const button = document.getElementById('muteToggle');
-
-  // 처음엔 소리 켜짐 상태로 시작 (자동재생)
-  audio.muted = false;
-
-  button.addEventListener('click', () => {
-    audio.muted = !audio.muted;
-    button.textContent = audio.muted ? '🔈 음소거 해제' : '🔇 음소거';
-  });
-</script>
-
+  <audio id="bgm" autoplay muted loop>
+    <source src="healing.mp3" type="audio/mpeg">
+    브라우저가 오디오를 지원하지 않습니다.
+  </audio>
   
   <div class="header">
     <div class="title-box">
