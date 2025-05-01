@@ -52,28 +52,64 @@
       background-color: #005fa3;
     }
 
-  #toggleBgm {
+  #audioControlBox {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 30px;
-    background-color: #28a745;
-    color: white;
-    cursor: pointer;
+    background-color: rgba(0, 122, 204, 0.9);
+    padding: 15px;
+    border-radius: 20px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     z-index: 9999;
   }
 
+  #toggleBgm {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #007acc;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
   #toggleBgm:hover {
-    background-color: #218838;
+    background-color: #e6f0fa;
     transform: scale(1.05);
   }
+
   #volumeControl {
     width: 120px;
+    appearance: none;
+    height: 6px;
+    border-radius: 5px;
+    background: white;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  #volumeControl::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #007acc;
+    cursor: pointer;
+  }
+
+  #volumeControl::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #007acc;
+    cursor: pointer;
   }
   </style>
 </head>
@@ -94,7 +130,6 @@
   const volumeSlider = document.getElementById('volumeControl');
 
   let isPlaying = false;
-
   audio.volume = volumeSlider.value;
 
   button.addEventListener('click', () => {
