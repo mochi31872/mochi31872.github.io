@@ -72,18 +72,17 @@
     background-color: #218838;
     transform: scale(1.05);
   }
-   #volumeControl {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 150px;
-    z-index: 9999;
+  #volumeControl {
+    width: 120px;
   }
   </style>
 </head>
 <body>
-<button id="toggleBgm">🎵 배경음악 재생</button>
-<input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+<div id="audioControlBox">
+  <button id="toggleBgm">🎵 배경음악 재생</button>
+  <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+</div>
+
 <audio id="bgm" loop>
   <source src="healing.mp3" type="audio/mpeg">
   브라우저가 오디오를 지원하지 않습니다.
