@@ -52,35 +52,54 @@
       background-color: #005fa3;
     }
 
-     #muteToggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 12px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 30px;
-      background-color: #007acc;
-      color: white;
-      cursor: pointer;
-      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      z-index: 9999;
-    }
+    <style>
+  #toggleBgm {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 9999;
+  }
 
-    #muteToggle:hover {
-      background-color: #005fa3;
-      transform: scale(1.05);
-    }
+  #toggleBgm:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
   </style>
 </head>
 <body>
-<button id="muteToggle">🔊 소리 켜기</button>
+<button id="toggleBgm">🎵 배경음악 재생</button>
 
-  <audio id="bgm" autoplay muted loop>
-    <source src="healing.mp3" type="audio/mpeg">
-    브라우저가 오디오를 지원하지 않습니다.
-  </audio>
+<audio id="bgm" loop>
+  <source src="healing.mp3" type="audio/mpeg">
+  브라우저가 오디오를 지원하지 않습니다.
+</audio>
+
+<script>
+  const audio = document.getElementById('bgm');
+  const button = document.getElementById('toggleBgm');
+
+  let isPlaying = false;
+
+  button.addEventListener('click', () => {
+    if (isPlaying) {
+      audio.pause();
+      button.textContent = '🎵 배경음악 재생';
+    } else {
+      audio.play();
+      button.textContent = '⏸️ 배경음악 정지';
+    }
+    isPlaying = !isPlaying;
+  });
+</script>
   
   <div class="header">
     <div class="title-box">
