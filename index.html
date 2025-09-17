@@ -37,27 +37,12 @@
       text-shadow: 5px 5px 6px rgba(0, 0, 0, 1);
     }
 
-    .link-group.full-width {
-      max-width: none;
-      width: 100%;
-      justify-content: flex-start;
-    }
-
-    .link-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      max-width: 300px;
-    }
-
     .link {
-      flex: 1 1 45%; 
-      text-align: center;
-      font-size: 16px;
-      padding: 10px 0;
-      background-color: black;
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 6px 0;
       color: white;
+      background-color: #007acc;
       text-decoration: none;
       border-radius: 8px;
       transition: background-color 0.3s ease;
@@ -67,94 +52,95 @@
       background-color: #005fa3;
     }
 
-    #audioControlBox {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: rgba(0, 122, 204, 0.9);
-      padding: 15px;
-      border-radius: 20px;
-      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 9999;
-    }
+  .link-group.full-width {
+    max-width: none;
+    width: 100%;
+    justify-content: flex-start;
+  }
 
-    #toggleBgm {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 30px;
-      background-color: #ffffff;
-      color: #007acc;
-      cursor: pointer;
-      font-weight: bold;
-      margin-bottom: 12px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+  .link-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 300px;
+  }
 
-    #toggleBgm:hover {
-      background-color: #e6f0fa;
-      transform: scale(1.05);
-    }
+  .link {
+    flex: 1 1 45%; 
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 0;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
 
-    #volumeControl {
-      width: 120px;
-      appearance: none;
-      height: 6px;
-      border-radius: 5px;
-      background: white;
-      outline: none;
-      -webkit-transition: .2s;
-      transition: opacity .2s;
-    }
+  .link:hover {
+    background-color: #005fa3;
+  }
 
-    #volumeControl::-webkit-slider-thumb {
-      appearance: none;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #007acc;
-      cursor: pointer;
-    }
+  #audioControlBox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 122, 204, 0.9);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999;
+  }
 
-    #volumeControl::-moz-range-thumb {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #007acc;
-      cursor: pointer;
-    }
+  #toggleBgm {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #007acc;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
 
-    /* 링크 업로드 박스 */
-    #uploadBox {
-      margin: 30px auto;
-      padding: 20px;
-      background-color: rgba(0,0,0,0.7);
-      border-radius: 12px;
-      text-align: center;
-      width: 400px;
-    }
-    #newLink {
-      width: 80%;
-      padding: 8px;
-      border-radius: 6px;
-      border: none;
-      margin-bottom: 10px;
-    }
-    #uploadBtn {
-      padding: 8px 16px;
-      border: none;
-      border-radius: 6px;
-      background-color: #007acc;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    #uploadBtn:hover {
-      background-color: #005fa3;
-    }
+  #toggleBgm:hover {
+    background-color: #e6f0fa;
+    transform: scale(1.05);
+  }
+
+  #volumeControl {
+    width: 120px;
+    appearance: none;
+    height: 6px;
+    border-radius: 5px;
+    background: white;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  #volumeControl::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #007acc;
+    cursor: pointer;
+  }
+
+  #volumeControl::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #007acc;
+    cursor: pointer;
+  }
   </style>
 </head>
 <body>
@@ -275,61 +261,5 @@
     </div>
   </div>
 </div>
-
-<!-- 🔽 링크 업로드 박스 -->
-<div id="uploadBox">
-  <h2 style="color:white;">새 링크 추가</h2>
-  <input id="newLink" type="text" placeholder="https://example.com">
-  <button id="uploadBtn">깃허브에 업로드</button>
-</div>
-
-<script>
-  const token = "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"; // ⚠️ 여기에 발급받은 토큰 넣기
-  const repo = "mochi31872/mochi31872.github.io"; // 예: mochi31872/my-links
-  const path = "links.json";    // 저장할 파일
-  const apiUrl = `https://api.github.com/repos/${repo}/contents/${path}`;
-
-  async function uploadLinkToGithub(newLink) {
-    let res = await fetch(apiUrl, {
-      headers: { Authorization: `token ${token}` }
-    });
-    let fileData = await res.json();
-
-    let content = fileData.content ? atob(fileData.content) : "[]";
-    let links = JSON.parse(content);
-
-    links.push({
-      url: newLink,
-      added: new Date().toISOString()
-    });
-
-    const updatedContent = btoa(JSON.stringify(links, null, 2));
-
-    await fetch(apiUrl, {
-      method: "PUT",
-      headers: {
-        Authorization: `token ${token}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        message: "Add new link",
-        content: updatedContent,
-        sha: fileData.sha
-      })
-    });
-
-    alert("깃허브에 저장 완료!");
-  }
-
-  document.querySelector("#uploadBtn").addEventListener("click", () => {
-    const link = document.querySelector("#newLink").value.trim();
-    if (link) {
-      uploadLinkToGithub(link);
-    } else {
-      alert("링크를 입력하세요!");
-    }
-  });
-</script>
-
 </body>
 </html>
