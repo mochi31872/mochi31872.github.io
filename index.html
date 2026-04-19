@@ -176,6 +176,31 @@
   volumeSlider.addEventListener('input', () => {
     audio.volume = volumeSlider.value;
   });
+
+// 🔍 검색 기능
+  const searchBox = document.getElementById('searchBox');
+
+  searchBox.addEventListener('input', () => {
+    const keyword = searchBox.value.toLowerCase();
+
+    document.querySelectorAll('.univ-box, .title-box').forEach(box => {
+      const title = box.querySelector('h1').textContent.toLowerCase();
+      let hasMatch = false;
+
+      box.querySelectorAll('.link').forEach(link => {
+        const text = link.textContent.toLowerCase();
+        if (text.includes(keyword) || title.includes(keyword)) {
+          link.style.display = 'block';
+          hasMatch = true;
+        } else {
+          link.style.display = 'none';
+        }
+      });
+
+      // 카테고리 숨김 처리
+      box.style.display = hasMatch ? 'flex' : 'none';
+    });
+  });
 </script>
   
 <div class="header">
